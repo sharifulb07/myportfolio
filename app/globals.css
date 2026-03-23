@@ -1,0 +1,84 @@
+/* app/globals.css (Updated for Tailwind CSS v4) */
+@import 'tailwindcss';
+
+@theme {
+  --font-inter: var(--font-inter), sans-serif;
+  --font-space-grotesk: var(--font-space-grotesk), monospace;
+  
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 1.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) infinite;
+  --animate-gradient-shift: gradient-shift 3s ease infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-bounce-slow: bounce 2s infinite;
+  
+  --background-size-300: 300%;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 0.8; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes shimmer {
+    100% { transform: translateX(100%); }
+  }
+}
+
+@layer base {
+  * {
+    cursor: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply overflow-x-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white;
+  }
+
+  ::selection {
+    @apply bg-purple-500/30 text-white;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-300% bg-clip-text text-transparent animate-gradient-shift;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20;
+  }
+}
+
+@layer utilities {
+  .bg-300\% {
+    background-size: 300%;
+  }
+}
