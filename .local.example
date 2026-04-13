@@ -1,0 +1,17 @@
+# .env.local
+EMAIL_USER=shariful01944180957@gmail.com
+EMAIL_PASS=cfzimiberlzusoza
+CONTACT_EMAIL=shariful01944180957@gmail.com
+MONGODB_URI=mongodb+srv://shariful01944180957_db_user:980aCO6Ob1JI2nB7@cluster0.vxmjdaw.mongodb.net/
+NEXTAUTH_SECRET=Ey7nTKnggBc0bRN8WUjyShw2qzOZ6KW4fUyqcKBePxY=
+NEXTAUTH_URL=http://localhost:3000
+CLOUDINARY_CLOUD_NAME=divphabxn
+CLOUDINARY_API_KEY=279514451868923
+CLOUDINARY_API_SECRET=dIXkDOvqQPOlRVAr8WBlrm-d4Jk
+
+
+// 980aCO6Ob1JI2nB7
+
+//shariful01944180957_db_user
+
+//cfzi mibe rlzu soza
