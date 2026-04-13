@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f6fb;
+  --surface: #ffffff;
+  --surface-soft: #eef2ff;
+  --foreground: #0f172a;
+  --muted-foreground: #64748b;
+  --border: #dbe3ef;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --hero-from: #1d4ed8;
+  --hero-to: #0f172a;
+}
+
+html.light {
+  color-scheme: light;
+  --background: #f3f6fb;
+  --surface: #ffffff;
+  --surface-soft: #eef2ff;
+  --foreground: #0f172a;
+  --muted-foreground: #64748b;
+  --border: #dbe3ef;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --hero-from: #1d4ed8;
+  --hero-to: #0f172a;
+}
+
+html.dark {
+  color-scheme: dark;
+  --background: #020817;
+  --surface: #0b1220;
+  --surface-soft: #111a2c;
+  --foreground: #e2e8f0;
+  --muted-foreground: #94a3b8;
+  --border: #1e2c45;
+  --primary: #3b82f6;
+  --primary-foreground: #eff6ff;
+  --hero-from: #1e3a8a;
+  --hero-to: #020617;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light):not(.dark) {
+    color-scheme: dark;
+    --background: #020617;
+    --surface: #0b1220;
+    --surface-soft: #111a2c;
+    --foreground: #e2e8f0;
+    --muted-foreground: #94a3b8;
+    --border: #1e2c45;
+    --primary: #3b82f6;
+    --primary-foreground: #eff6ff;
+    --hero-from: #1e3a8a;
+    --hero-to: #020617;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  border-color: var(--border);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+html.dark .bg-white {
+  background-color: var(--surface) !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-slate-100 {
+  background-color: var(--surface-soft) !important;
+}
+
+html.dark .text-slate-400,
+html.dark .text-slate-500,
+html.dark .text-slate-600,
+html.dark .text-slate-700 {
+  color: var(--muted-foreground) !important;
+}
+
+html.dark .text-slate-900 {
+  color: var(--foreground) !important;
+}
+
+html.dark .bg-slate-900 {
+  background-color: var(--primary) !important;
+}
